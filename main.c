@@ -11,37 +11,36 @@ buz_t bus = {NULL, NULL, NULL, 0};
 int main(int argc, char *argv[])
 {
 	char *contnt;
-	FILE *file;
-	size_t size = 0;
-	ssize_t read_line = 1;
+	FILE *f_le;
+	size_t size = 0, read_lne = 1;
 	unsigned int counter = 0;
-	stack_t *stack = NULL;
+	stack_t *stak = NULL;
 
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty fil\n");
 		exit(EXIT_FAILURE);
 	}
-	file = fopen(argv[1], "r");
-	bus.file = file;
-	if (!file)
+	f_le = fopen(argv[1], "r");
+	bus.file = f_le;
+	if (!f_le)
 	{
 		fprintf(stderr, "Error: Can't open fil %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (read_line > 0)
+	while (read_lne > 0)
 	{
 		contnt = NULL;
-		read_line = getline(&contnt, &size, file);
+		read_lne = getline(&contnt, &size, f_le);
 		bus.content = contnt;
 		counter++;
-		if (read_line > 0)
+		if (read_lne > 0)
 		{
-			executin(contnt, &stack, counter, file);
+			executin(contnt, &stak, counter, f_le);
 		}
 		free(contnt);
 	}
-	_freestacks(stack);
-	fclose(file);
+	_freestacks(stak);
+	fclose(f_le);
 	return (0);
 }

@@ -9,13 +9,13 @@
 
 void mi_sub(stack_t **hd, unsigned int counter)
 {
-	stack_t *aux;
-	int sus;
+	stack_t *aux_;
 	int nodes;
+	int sos;
 
-	aux = *hd;
-	for (nodes = 0; aux != NULL; nodes++)
-		aux = aux->next;
+	aux_ = *hd;
+	for (nodes = 0; aux_ != NULL; nodes++)
+		aux_ = aux_->next;
 	if (nodes < 2)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", counter);
@@ -24,9 +24,9 @@ void mi_sub(stack_t **hd, unsigned int counter)
 		_freestacks(*hd);
 		exit(EXIT_FAILURE);
 	}
-	aux = *hd;
-	sus = aux->next->n - aux->n;
-	aux->next->n = sus;
-	*hd = aux->next;
-	free(aux);
+	aux_ = *hd;
+	sos = aux_->next->n - aux_->n;
+	aux_->next->n = sos;
+	*hd = aux_->next;
+	free(aux_);
 }

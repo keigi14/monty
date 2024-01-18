@@ -10,16 +10,16 @@
 void mi_mod(stack_t **hd, unsigned int counter)
 {
 	stack_t *p;
-	int aux;
-	int len = 0;
+	int aux_;
+	int lenh = 0;
 
 	p = *hd;
 	while (p)
 	{
 		p = p->next;
-		len++;
+		lenh++;
 	}
-	if (len < 2)
+	if (lenh < 2)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", counter);
 		fclose(bus.file);
@@ -36,8 +36,8 @@ void mi_mod(stack_t **hd, unsigned int counter)
 		_freestacks(*hd);
 		exit(EXIT_FAILURE);
 	}
-	aux = p->next->n % p->n;
-	p->next->n = aux;
+	aux_ = p->next->n % p->n;
+	p->next->n = aux_;
 	*hd = p->next;
 	free(p);
 }

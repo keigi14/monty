@@ -7,9 +7,9 @@
  */
 void mi_push(stack_t **hd, unsigned int counter)
 {
-	int n;
+	int v;
 	int j = 0;
-	int flag = 0;
+	int _flag = 0;
 
 	if (bus.arg)
 	{
@@ -18,8 +18,8 @@ void mi_push(stack_t **hd, unsigned int counter)
 		for (; bus.arg[j] != '\0'; j++)
 		{
 			if (bus.arg[j] > 57 || bus.arg[j] < 48)
-				flag = 1; }
-		if (flag == 1)
+				_flag = 1; }
+		if (_flag == 1)
 		{ fprintf(stderr, "L%d: usage: push integer\n", counter);
 			fclose(bus.file);
 			free(bus.content);
@@ -31,9 +31,9 @@ void mi_push(stack_t **hd, unsigned int counter)
 		free(bus.content);
 		_freestacks(*hd);
 		exit(EXIT_FAILURE); }
-	n = atoi(bus.arg);
+	v = atoi(bus.arg);
 	if (bus.lifi == 0)
-		_add_node(hd, n);
+		_add_node(hd, v);
 	else
-		_add_queue(hd, n);
+		_add_queue(hd, v);
 }

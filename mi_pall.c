@@ -8,15 +8,15 @@
 
 void mi_pall(stack_t **hd, unsigned int counter)
 {
-	stack_t *p;
+	stack_t *v;
 	(void)counter;
 
-	p = *hd;
-	if (p == NULL)
+	v = *hd;
+	if (v == NULL)
 		return;
-	while (p)
+	while (v)
 	{
-		printf("%d\n", p->n);
-		p = p->next;
+		printf("%d\n", v->n);
+		v = v->next;
 	}
 }

@@ -8,16 +8,16 @@
 void mi_add(stack_t **hd, unsigned int counter)
 {
 	stack_t *w;
-	int len = 0;
-	int aux;
+	int lenh = 0;
+	int aux_;
 
 	w = *hd;
 	while (w)
 	{
 		w = w->next;
-		len++;
+		lenh++;
 	}
-	if (len < 2)
+	if (lenh < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", counter);
 		fclose(bus.file);
@@ -26,8 +26,8 @@ void mi_add(stack_t **hd, unsigned int counter)
 		exit(EXIT_FAILURE);
 	}
 	w = *hd;
-	aux = w->n + w->next->n;
-	w->next->n = aux;
+	aux_ = w->n + w->next->n;
+	w->next->n = aux_;
 	*hd = w->next;
 	free(w);
 }

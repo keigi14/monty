@@ -9,10 +9,10 @@
  */
 void mi_pchar(stack_t **hd, unsigned int counter)
 {
-	stack_t *h;
+	stack_t *u;
 
-	h = *hd;
-	if (!h)
+	u = *hd;
+	if (!u)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", counter);
 		fclose(bus.file);
@@ -20,7 +20,7 @@ void mi_pchar(stack_t **hd, unsigned int counter)
 		_freestacks(*hd);
 		exit(EXIT_FAILURE);
 	}
-	if (h->n > 127 || h->n < 0)
+	if (u->n > 127 || u->n < 0)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", counter);
 		fclose(bus.file);
@@ -28,5 +28,5 @@ void mi_pchar(stack_t **hd, unsigned int counter)
 		_freestacks(*hd);
 		exit(EXIT_FAILURE);
 	}
-	printf("%c\n", h->n);
+	printf("%c\n", u->n);
 }

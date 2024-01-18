@@ -8,16 +8,16 @@
 void mi_div(stack_t **hd, unsigned int counter)
 {
 	stack_t *q;
-	int aux;
-	int len = 0;
+	int aux_;
+	int lenh = 0;
 
 	q = *hd;
 	while (q)
 	{
 		q = q->next;
-		len++;
+		lenh++;
 	}
-	if (len < 2)
+	if (lenh < 2)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", counter);
 		fclose(bus.file);
@@ -34,8 +34,8 @@ void mi_div(stack_t **hd, unsigned int counter)
 		_freestacks(*hd);
 		exit(EXIT_FAILURE);
 	}
-	aux = q->next->n / q->n;
-	q->next->n = aux;
+	aux_ = q->next->n / q->n;
+	q->next->n = aux_;
 	*hd = q->next;
 	free(q);
 }

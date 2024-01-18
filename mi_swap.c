@@ -8,16 +8,16 @@
 void mi_swap(stack_t **hd, unsigned int counter)
 {
 	stack_t *p;
-	int aux;
-	int len = 0;
+	int aux_;
+	int lenh = 0;
 
 	p = *hd;
 	while (p)
 	{
 		p = p->next;
-		len++;
+		lenh++;
 	}
-	if (len < 2)
+	if (lenh < 2)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", counter);
 		fclose(bus.file);
@@ -26,7 +26,7 @@ void mi_swap(stack_t **hd, unsigned int counter)
 		exit(EXIT_FAILURE);
 	}
 	p = *hd;
-	aux = p->n;
+	aux_ = p->n;
 	p->n = p->next->n;
-	p->next->n = aux;
+	p->next->n = aux_;
 }

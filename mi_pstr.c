@@ -8,18 +8,18 @@
  */
 void mi_pstr(stack_t **hd, unsigned int counter)
 {
-	stack_t *h;
+	stack_t *o;
 	(void)counter;
 
-	h = *hd;
-	while (h)
+	o = *hd;
+	while (o)
 	{
-		if (h->n > 127 || h->n <= 0)
+		if (o->n > 127 || o->n <= 0)
 		{
 			break;
 		}
-		printf("%c", h->n);
-		h = h->next;
+		printf("%c", o->n);
+		o = o->next;
 	}
 	printf("\n");
 }

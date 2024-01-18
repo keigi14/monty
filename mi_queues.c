@@ -21,9 +21,9 @@ void mi_queue(stack_t **hd, unsigned int counter)
  */
 void _add_queue(stack_t **hd, int n)
 {
-	stack_t *newnode, *aux;
+	stack_t *newnode, *aux_;
 
-	aux = *hd;
+	aux_ = *hd;
 	newnode = malloc(sizeof(stack_t));
 	if (newnode == NULL)
 	{
@@ -31,19 +31,19 @@ void _add_queue(stack_t **hd, int n)
 	}
 	newnode->n = n;
 	newnode->next = NULL;
-	if (aux)
+	if (aux_)
 	{
-		while (aux->next)
-			aux = aux->next;
+		while (aux_->next)
+			aux_ = aux_->next;
 	}
-	if (!aux)
+	if (!aux_)
 	{
 		*hd = newnode;
 		newnode->prev = NULL;
 	}
 	else
 	{
-		aux->next = newnode;
-		newnode->prev = aux;
+		aux_->next = newnode;
+		newnode->prev = aux_;
 	}
 }
