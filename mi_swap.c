@@ -4,20 +4,20 @@
  * @hd: stack hd
  * @counter: line_nuber
  * Return: not return
- */
+*/
 void mi_swap(stack_t **hd, unsigned int counter)
 {
 	stack_t *p;
 	int aux_;
-	int lenh = 0;
+	int leen = 0;
 
 	p = *hd;
 	while (p)
 	{
 		p = p->next;
-		lenh++;
+		leen++;
 	}
-	if (lenh < 2)
+	if (leen < 2)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", counter);
 		fclose(bus.file);

@@ -1,9 +1,9 @@
 #include "monty.h"
 /**
- *mi_rotl- rotate de stack to the top
- *@hd: stacks head,
- *@counter: line_nuber
- *Return: not return
+  *mi_rotl- rotate de stack to the top
+  *@hd: stacks head,
+  *@counter: line_nuber
+  *Return: not return
  */
 
 void mi_rotl(stack_t **hd,  __attribute__((unused)) unsigned int counter)

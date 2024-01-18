@@ -9,7 +9,7 @@ void mi_push(stack_t **hd, unsigned int counter)
 {
 	int v;
 	int j = 0;
-	int _flag = 0;
+	int flag = 0;
 
 	if (bus.arg)
 	{
@@ -18,8 +18,8 @@ void mi_push(stack_t **hd, unsigned int counter)
 		for (; bus.arg[j] != '\0'; j++)
 		{
 			if (bus.arg[j] > 57 || bus.arg[j] < 48)
-				_flag = 1; }
-		if (_flag == 1)
+				flag = 1; }
+		if (flag == 1)
 		{ fprintf(stderr, "L%d: usage: push integer\n", counter);
 			fclose(bus.file);
 			free(bus.content);

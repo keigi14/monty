@@ -9,16 +9,16 @@
 void mi_mul(stack_t **hd, unsigned int counter)
 {
 	stack_t *p;
-	int lenh = 0;
+	int leen = 0;
 	int aux_;
 
 	p = *hd;
 	while (p)
 	{
 		p = p->next;
-		lenh++;
+		leen++;
 	}
-	if (lenh < 2)
+	if (leen < 2)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", counter);
 		fclose(bus.file);

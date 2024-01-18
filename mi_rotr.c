@@ -8,20 +8,20 @@
 
 void mi_rotr(stack_t **hd, __attribute__((unused)) unsigned int counter)
 {
-	stack_t *copy;
+	stack_t *cpy;
 
-	copy = *hd;
+	cpy = *hd;
 	if (*hd == NULL || (*hd)->next == NULL)
 	{
 		return;
 	}
-	while (copy->next)
+	while (cpy->next)
 	{
-		copy = copy->next;
+		cpy = cpy->next;
 	}
-	copy->next = *hd;
-	copy->prev->next = NULL;
-	copy->prev = NULL;
-	(*hd)->prev = copy;
-	(*hd) = copy;
+	cpy->next = *hd;
+	cpy->prev->next = NULL;
+	cpy->prev = NULL;
+	(*hd)->prev = cpy;
+	(*hd) = cpy;
 }

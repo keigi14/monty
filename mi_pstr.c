@@ -5,21 +5,21 @@
  * @hd: stacks head
  * @counter: line_nuber
  * Return: not return
- */
+*/
 void mi_pstr(stack_t **hd, unsigned int counter)
 {
-	stack_t *o;
+	stack_t *p;
 	(void)counter;
 
-	o = *hd;
-	while (o)
+	p = *hd;
+	while (p)
 	{
-		if (o->n > 127 || o->n <= 0)
+		if (p->n > 127 || p->n <= 0)
 		{
 			break;
 		}
-		printf("%c", o->n);
-		o = o->next;
+		printf("%c", p->n);
+		p = p->next;
 	}
 	printf("\n");
 }

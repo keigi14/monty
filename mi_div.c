@@ -9,15 +9,15 @@ void mi_div(stack_t **hd, unsigned int counter)
 {
 	stack_t *q;
 	int aux_;
-	int lenh = 0;
+	int lent = 0;
 
 	q = *hd;
 	while (q)
 	{
 		q = q->next;
-		lenh++;
+		lent++;
 	}
-	if (lenh < 2)
+	if (lent < 2)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", counter);
 		fclose(bus.file);

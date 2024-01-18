@@ -7,7 +7,7 @@
  */
 void mi_pop(stack_t **hd, unsigned int counter)
 {
-	stack_t *v;
+	stack_t *p;
 
 	if (*hd == NULL)
 	{
@@ -17,7 +17,7 @@ void mi_pop(stack_t **hd, unsigned int counter)
 		_freestacks(*hd);
 		exit(EXIT_FAILURE);
 	}
-	v = *hd;
-	*hd = v->next;
-	free(v);
+	p = *hd;
+	*hd = p->next;
+	free(p);
 }
